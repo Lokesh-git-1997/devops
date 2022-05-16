@@ -24,7 +24,7 @@
 
   - name: Stop the running container
 
-    command: docker stop customcontainer
+    command: sudo docker stop customcontainer
 
     ignore_errors: True
 
@@ -32,7 +32,7 @@
 
   - name: remove the running container
 
-    command: docker rm customcontainer
+    command: sudo docker rm customcontainer
 
     ignore_errors: True
 
@@ -40,7 +40,7 @@
 
   - name: remove the running image
 
-    command: docker rmi customimage
+    command: sudo docker rmi customimage
 
     ignore_errors: True
 
@@ -48,10 +48,10 @@
 
   - name: Create the image from Docker file
 
-    command: docker build -t customimage .
+    command: sudo docker build -t customimage .
 
 
 
   - name: Create and run container
 
-    command: docker run -d -p 8080:8080 --name customcontainer customimage
+    command: sudo docker run -d -p 8080:8080 --name customcontainer customimage
