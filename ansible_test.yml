@@ -5,6 +5,13 @@
   tasks:
 
 
+  - name: Install docker
+
+    command: |
+        sudo yum update -y
+        sudo yum install docker -y
+        sudo systemctl enable docker.service
+        sudo systemctl start docker.service
 
   - name: copy Dockerfile into Remote machine
 
